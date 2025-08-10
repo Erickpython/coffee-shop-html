@@ -1,0 +1,210 @@
+/*
+  Java Beans Coffee - Professional Coffee Shop Stylesheet
+  Author: ERICK WAMBUGU
+  Last updated: June 2025
+*/
+
+:root {
+  --coffee-brown: #6f4c3e;
+  --coffee-light: #d7ccc8;
+  --coffee-cream: #fff8f0;
+  --accent: #c19a6b;
+  --text-dark: #3e2723;
+  --text-light: #fff;
+  --header-shadow: 0 4px 12px rgba(111, 76, 62, 0.15);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
+  background: var(--coffee-cream);
+  color: var(--text-dark);
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+}
+
+main {
+  max-width: 900px;
+  margin: 2rem auto;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(111, 76, 62, 0.10);
+  padding: 2rem 2.5rem 1.5rem 2.5rem;
+}
+
+header {
+  text-align: center;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid var(--coffee-light);
+  box-shadow: var(--header-shadow);
+  background: linear-gradient(90deg, var(--coffee-brown) 0%, var(--accent) 100%);
+  color: var(--text-light);
+  border-radius: 16px 16px 0 0;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin: 0.5rem 0 0.2rem 0;
+  letter-spacing: 2px;
+  font-family: 'Merriweather', serif;
+}
+
+header p {
+  font-size: 1.2rem;
+  margin-bottom: 1.2rem;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+}
+
+nav a {
+  color: var(--text-light);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: color 0.2s;
+  position: relative;
+}
+
+nav a::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: var(--accent);
+  transition: width 0.3s;
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+
+section {
+  margin: 2.5rem 0 2rem 0;
+}
+
+section h2 {
+  color: var(--coffee-brown);
+  font-size: 2rem;
+  margin-bottom: 0.7rem;
+  font-family: 'Merriweather', serif;
+}
+
+#menu ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  padding: 0;
+  list-style: none;
+  justify-content: center;
+}
+
+#menu li {
+  background: var(--coffee-light);
+  color: var(--coffee-brown);
+  padding: 0.7rem 1.5rem;
+  border-radius: 24px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  box-shadow: 0 2px 8px rgba(111, 76, 62, 0.07);
+  margin-bottom: 0.5rem;
+  transition: background 0.2s, color 0.2s;
+}
+
+#menu li:hover {
+  background: var(--accent);
+  color: var(--text-light);
+}
+
+aside {
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+aside img {
+  border-radius: 50%;
+  box-shadow: 0 4px 24px rgba(111, 76, 62, 0.18);
+  border: 4px solid var(--accent);
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  background: #fff;
+}
+
+#contact a {
+  color: var(--coffee-brown);
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+#contact a:hover {
+  color: var(--accent);
+}
+
+footer {
+  text-align: center;
+  padding: 1.5rem 0 0.5rem 0;
+  background: linear-gradient(90deg, var(--coffee-brown) 0%, var(--accent) 100%);
+  color: var(--text-light);
+  border-radius: 0 0 16px 16px;
+  margin-top: 2rem;
+  font-size: 1rem;
+}
+
+footer a {
+  color: var(--accent);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+
+footer a:hover {
+  color: #fff;
+}
+
+@media (max-width: 700px) {
+  main {
+    padding: 1rem 0.5rem;
+  }
+  header h1 {
+    font-size: 2rem;
+  }
+  section h2 {
+    font-size: 1.3rem;
+  }
+  #menu ul {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  aside img {
+    width: 140px;
+    height: 140px;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  background: var(--coffee-light);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--coffee-brown);
+  border-radius: 8px;
+}
