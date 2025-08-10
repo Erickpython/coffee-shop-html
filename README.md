@@ -50,8 +50,8 @@ coffee-shop-html/
 
 ## Contact
 For questions or feedback, please contact:
-- Email: [javacoffee@gmail.com](mailto:javacoffee@gmail.com)
-- Phone: +1234-567-890
+- Email: [erick.wambugu254@gmail.com](mailto:erick.wambugu254@gmail.com)
+- Phone: +254 717 829 705
 
 ---
 
