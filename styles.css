@@ -4,14 +4,16 @@
   Last updated: June 2025
 */
 
+
 :root {
-  --coffee-brown: #6f4c3e;
-  --coffee-light: #d7ccc8;
-  --coffee-cream: #fff8f0;
-  --accent: #c19a6b;
-  --text-dark: #3e2723;
-  --text-light: #fff;
-  --header-shadow: 0 4px 12px rgba(111, 76, 62, 0.15);
+  --coffee-brown: #4b2e19;         /* Deep espresso brown */
+  --coffee-light: #bfa074;         /* Warm latte tan */
+  --coffee-cream: #f7efe7;         /* Creamy background */
+  --accent: #d9a441;               /* Golden caramel accent */
+  --accent-dark: #a86b1c;          /* Rich caramel for hover */
+  --text-dark: #2d1606;            /* Dark roast text */
+  --text-light: #fff8f0;           /* Creamy white text */
+  --header-shadow: 0 4px 16px rgba(75, 46, 25, 0.18);
 }
 
 html {
@@ -20,7 +22,7 @@ html {
 
 body {
   font-family: 'Segoe UI', 'Roboto', Arial, sans-serif;
-  background: var(--coffee-cream);
+  background: linear-gradient(120deg, #f7efe7 0%, #f3e3c3 100%);
   color: var(--text-dark);
   margin: 0;
   padding: 0;
@@ -30,32 +32,46 @@ body {
 main {
   max-width: 900px;
   margin: 2rem auto;
-  background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 8px 32px rgba(111, 76, 62, 0.10);
-  padding: 2rem 2.5rem 1.5rem 2.5rem;
+  background: var(--coffee-cream);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(75, 46, 25, 0.13);
+  padding: 2.2rem 2.7rem 1.7rem 2.7rem;
+  border: 2px solid var(--coffee-light);
 }
 
 header {
   text-align: center;
   padding-bottom: 1.5rem;
-  border-bottom: 2px solid var(--coffee-light);
+  border-bottom: 2px solid var(--accent);
   box-shadow: var(--header-shadow);
-  background: linear-gradient(90deg, var(--coffee-brown) 0%, var(--accent) 100%);
+  background: linear-gradient(100deg, var(--coffee-brown) 0%, var(--accent) 100%);
   color: var(--text-light);
-  border-radius: 16px 16px 0 0;
+  border-radius: 20px 20px 0 0;
+  position: relative;
+  overflow: hidden;
+}
+header::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background: url('https://www.transparenttextures.com/patterns/coffee-beans.png');
+  opacity: 0.08;
+  pointer-events: none;
 }
 
 header h1 {
-  font-size: 2.5rem;
-  margin: 0.5rem 0 0.2rem 0;
-  letter-spacing: 2px;
+  font-size: 2.7rem;
+  margin: 0.7rem 0 0.2rem 0;
+  letter-spacing: 2.5px;
   font-family: 'Merriweather', serif;
+  text-shadow: 1px 2px 8px rgba(75, 46, 25, 0.13);
 }
 
 header p {
   font-size: 1.2rem;
   margin-bottom: 1.2rem;
+  color: var(--accent);
+  font-weight: 500;
 }
 
 nav ul {
@@ -74,6 +90,8 @@ nav a {
   font-size: 1.1rem;
   transition: color 0.2s;
   position: relative;
+  padding: 0.2rem 0.7rem;
+  border-radius: 8px;
 }
 
 nav a::after {
@@ -81,7 +99,7 @@ nav a::after {
   display: block;
   width: 0;
   height: 2px;
-  background: var(--accent);
+  background: var(--accent-dark);
   transition: width 0.3s;
   position: absolute;
   left: 0;
@@ -91,9 +109,9 @@ nav a::after {
 nav a:hover::after {
   width: 100%;
 }
-
 nav a:hover {
-  color: var(--accent);
+  color: var(--accent-dark);
+  background: rgba(217, 164, 65, 0.13);
 }
 
 section {
@@ -101,10 +119,11 @@ section {
 }
 
 section h2 {
-  color: var(--coffee-brown);
-  font-size: 2rem;
+  color: var(--accent-dark);
+  font-size: 2.1rem;
   margin-bottom: 0.7rem;
   font-family: 'Merriweather', serif;
+  letter-spacing: 1px;
 }
 
 #menu ul {
@@ -117,20 +136,21 @@ section h2 {
 }
 
 #menu li {
-  background: var(--coffee-light);
+  background: linear-gradient(90deg, var(--coffee-light) 60%, var(--accent) 100%);
   color: var(--coffee-brown);
   padding: 0.7rem 1.5rem;
   border-radius: 24px;
   font-size: 1.1rem;
   font-weight: 500;
-  box-shadow: 0 2px 8px rgba(111, 76, 62, 0.07);
+  box-shadow: 0 2px 8px rgba(75, 46, 25, 0.09);
   margin-bottom: 0.5rem;
-  transition: background 0.2s, color 0.2s;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
 }
 
 #menu li:hover {
-  background: var(--accent);
+  background: linear-gradient(90deg, var(--accent) 60%, var(--accent-dark) 100%);
   color: var(--text-light);
+  box-shadow: 0 4px 16px rgba(168, 107, 28, 0.18);
 }
 
 aside {
@@ -141,16 +161,16 @@ aside {
 
 aside img {
   border-radius: 50%;
-  box-shadow: 0 4px 24px rgba(111, 76, 62, 0.18);
-  border: 4px solid var(--accent);
+  box-shadow: 0 4px 24px rgba(75, 46, 25, 0.22);
+  border: 5px solid var(--accent-dark);
   width: 200px;
   height: 200px;
   object-fit: cover;
-  background: #fff;
+  background: #fff8f0;
 }
 
 #contact a {
-  color: var(--coffee-brown);
+  color: var(--accent-dark);
   text-decoration: underline;
   transition: color 0.2s;
 }
@@ -162,11 +182,12 @@ aside img {
 footer {
   text-align: center;
   padding: 1.5rem 0 0.5rem 0;
-  background: linear-gradient(90deg, var(--coffee-brown) 0%, var(--accent) 100%);
+  background: linear-gradient(100deg, var(--coffee-brown) 0%, var(--accent-dark) 100%);
   color: var(--text-light);
-  border-radius: 0 0 16px 16px;
+  border-radius: 0 0 20px 20px;
   margin-top: 2rem;
   font-size: 1rem;
+  box-shadow: 0 -2px 16px rgba(75, 46, 25, 0.10);
 }
 
 footer a {
@@ -177,7 +198,7 @@ footer a {
 }
 
 footer a:hover {
-  color: #fff;
+  color: #ffe7b3;
 }
 
 @media (max-width: 700px) {
@@ -195,8 +216,8 @@ footer a:hover {
     gap: 0.5rem;
   }
   aside img {
-    width: 140px;
-    height: 140px;
+    width: 120px;
+    height: 120px;
   }
 }
 
@@ -205,6 +226,6 @@ footer a:hover {
   background: var(--coffee-light);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--coffee-brown);
+  background: var(--accent-dark);
   border-radius: 8px;
 }
